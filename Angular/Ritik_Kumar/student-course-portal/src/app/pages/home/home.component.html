@@ -1,0 +1,49 @@
+<div class="home-container">
+  <!-- Task 11: String interpolation -->
+  <header class="welcome-header">
+    <h1>Welcome to {{ portalName }}</h1>
+    <p class="description">
+      Empowering students with seamless course enrollment, academic progress tracking, and interactive learning tools.
+    </p>
+  </header>
+
+  <!-- Stats Row -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <span class="stat-value">{{ availableCoursesCount }}</span>
+      <span class="stat-label">Courses Available</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{{ enrolledCount }}</span>
+      <span class="stat-label">Enrolled</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">{{ gpa }}</span>
+      <span class="stat-label">GPA</span>
+    </div>
+  </div>
+
+  <!-- Interactive Bindings Section -->
+  <div class="interactive-section">
+    <div class="action-box">
+      <h3>Quick Enrollment</h3>
+      <!-- Task 12 & 13: Property binding [disabled] and Event binding (click) -->
+      <button class="btn btn-primary" [disabled]="!isPortalActive" (click)="onEnrollClick()">
+        Enroll Now
+      </button>
+      <p *ngIf="message" class="message-banner">{{ message }}</p>
+    </div>
+
+    <div class="search-box">
+      <h3>Search Catalog</h3>
+      <!-- Task 14: Two-way binding [(ngModel)] -->
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Type course name or keyword..."
+        [(ngModel)]="searchTerm"
+      />
+      <p class="search-preview" *ngIf="searchTerm">Searching for: <strong>{{ searchTerm }}</strong></p>
+    </div>
+  </div>
+</div>

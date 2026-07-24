@@ -1,0 +1,19 @@
+{
+  "courses": [
+    { "id": 1, "name": "Data Structures & Algorithms", "code": "CS101", "credits": 4, "gradeStatus": "passed", "enrolled": false },
+    { "id": 2, "name": "Database Management Systems", "code": "CS102", "credits": 3, "gradeStatus": "passed", "enrolled": true },
+    { "id": 3, "name": "Web Application Architecture", "code": "CS201", "credits": 4, "gradeStatus": "pending", "enrolled": false },
+    { "id": 4, "name": "Software Engineering Principles", "code": "CS202", "credits": 3, "gradeStatus": "pending", "enrolled": false },
+    { "id": 5, "name": "Cloud Computing & DevOps", "code": "CS301", "credits": 1, "gradeStatus": "failed", "enrolled": false }
+  ],
+  "students": [
+    { "id": 1, "name": "Ritik Kumar", "email": "ritik.kumar@university.edu", "enrolledCourseIds": [2] },
+    { "id": 2, "name": "Alice Smith", "email": "alice@university.edu", "enrolledCourseIds": [1, 2] },
+    { "id": 3, "name": "Bob Jones", "email": "bob@university.edu", "enrolledCourseIds": [3] }
+  ],
+  "enrollments": [
+    { "id": 1, "studentId": 1, "courseId": 2 },
+    { "id": 2, "studentId": 2, "courseId": 1 },
+    { "id": 3, "studentId": 2, "courseId": 2 }
+  ]
+}

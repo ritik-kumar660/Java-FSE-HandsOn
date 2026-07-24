@@ -1,0 +1,30 @@
+.widget-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.widget-icon {
+  font-size: 1.8rem;
+}
+
+.widget-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-title {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.widget-count {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #38bdf8;
+}

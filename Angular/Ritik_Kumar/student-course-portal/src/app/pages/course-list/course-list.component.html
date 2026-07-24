@@ -1,0 +1,44 @@
+<div class="course-list-container">
+  <div class="list-header">
+    <h2>Available Courses (NgRx Store)</h2>
+    <p class="subtitle">Explore and enroll in undergraduate & postgraduate modules</p>
+  </div>
+
+  <!-- Task 96: Loading Indicator via async pipe -->
+  <div *ngIf="isLoading$ | async; else contentBlock" class="loading-box">
+    <div class="spinner"></div>
+    <p>Loading courses from NgRx Store...</p>
+  </div>
+
+  <ng-template #contentBlock>
+    <div *ngIf="error$ | async as err" class="error-banner">
+      {{ err }}
+    </div>
+
+    <!-- Task 96: Render using async pipe courses$ | async -->
+    <div *ngIf="(courses$ | async) as coursesList">
+      <div *ngIf="coursesList.length > 0; else noCourses" class="courses-grid">
+        <app-course-card
+          *ngFor="let c of coursesList; let i = index; trackBy: trackByCourseId"
+          [course]="c"
+          (enrollRequested)="onEnroll($event)"
+          (unenrollRequested)="onUnenroll($event)"
+          appHighlight="rgba(56, 189, 248, 0.12)"
+        >
+        </app-course-card>
+      </div>
+    </div>
+
+    <!-- Task 28: No courses template -->
+    <ng-template #noCourses>
+      <div class="no-courses-box">
+        <p>No courses available in store.</p>
+      </div>
+    </ng-template>
+
+    <!-- Task 24: Selected course ID notification -->
+    <div *ngIf="selectedCourseId" class="selection-banner">
+      <p>Selected course ID: <strong>{{ selectedCourseId }}</strong></p>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,85 @@
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.back-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.detail-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header-banner {
+  margin-bottom: 1.5rem;
+}
+
+.code-badge {
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.header-banner h2 {
+  font-size: 2rem;
+  color: #f8fafc;
+  margin-top: 0.25rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #0f172a;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.info-item span {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.syllabus-box h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.syllabus-box p {
+  color: #cbd5e1;
+}
+
+.error-box {
+  padding: 3rem;
+  text-align: center;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 16px;
+  color: #f87171;
+}

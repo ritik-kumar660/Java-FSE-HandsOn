@@ -1,0 +1,40 @@
+<div class="detail-container">
+  <a routerLink="/courses" class="back-link">← Back to Courses</a>
+
+  <div *ngIf="course$ | async as course; else notFound" class="detail-card">
+    <div class="header-banner">
+      <span class="code-badge">{{ course.code }}</span>
+      <h2>{{ course.name }}</h2>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <label>Course ID:</label>
+        <span>#{{ course.id }}</span>
+      </div>
+      <div class="info-item">
+        <label>Credit Weight:</label>
+        <span>{{ course.credits | creditLabel }}</span>
+      </div>
+      <div class="info-item">
+        <label>Status:</label>
+        <span class="badge" [ngClass]="'badge-' + course.gradeStatus">{{ course.gradeStatus }}</span>
+      </div>
+    </div>
+
+    <div class="syllabus-box">
+      <h3>Syllabus Overview</h3>
+      <p>
+        This module provides an in-depth exploration of core principles, modern software engineering paradigms,
+        practical hands-on laboratory exercises, and real-world project work in {{ course.name }}.
+      </p>
+    </div>
+  </div>
+
+  <ng-template #notFound>
+    <div class="error-box">
+      <h3>Course Not Found</h3>
+      <p>No course matching ID #{{ courseId }} could be located in the system.</p>
+    </div>
+  </ng-template>
+</div>

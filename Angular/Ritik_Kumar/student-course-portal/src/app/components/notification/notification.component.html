@@ -1,0 +1,8 @@
+<div class="notification-box">
+  <h4>🔔 Scoped Notifications</h4>
+  <ul>
+    <li *ngFor="let note of notificationService.getNotifications()">
+      {{ note }}
+    </li>
+  </ul>
+</div>

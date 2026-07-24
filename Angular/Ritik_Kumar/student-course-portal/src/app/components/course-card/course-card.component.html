@@ -1,0 +1,49 @@
+<div
+  class="course-card"
+  [ngClass]="cardClasses"
+  [class.card--enrolled]="((enrolledIds$ | async) || []).includes(course.id)"
+  [ngStyle]="borderStyle"
+>
+  <div class="card-header">
+    <div class="card-title-group">
+      <span class="course-code">{{ course.code }}</span>
+      <h3 class="course-name">{{ course.name }}</h3>
+    </div>
+
+    <!-- Task 27: *ngSwitch badge rendering -->
+    <div [ngSwitch]="course.gradeStatus" class="badge-container">
+      <span *ngSwitchCase="'passed'" class="badge badge-passed">Passed</span>
+      <span *ngSwitchCase="'failed'" class="badge badge-failed">Failed</span>
+      <span *ngSwitchDefault class="badge badge-pending">Pending</span>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <!-- Task 36: Custom pipe creditLabel -->
+    <p class="credits-info">
+      <strong>Credits:</strong> {{ course.credits | creditLabel }}
+    </p>
+
+    <!-- Task 31: Expandable extra details -->
+    <div *ngIf="isExpanded" class="expanded-content">
+      <p class="course-desc">
+        Comprehensive module covering core concepts, practical assignments, and evaluation criteria for {{ course.name }}.
+      </p>
+      <p class="course-id">Internal ID: #{{ course.id }}</p>
+    </div>
+  </div>
+
+  <div class="card-actions">
+    <!-- Task 100: NgRx async pipe enrollment toggle button -->
+    <button
+      class="btn"
+      [ngClass]="((enrolledIds$ | async) || []).includes(course.id) ? 'btn-secondary' : 'btn-primary'"
+      (click)="onEnrollClick()"
+    >
+      {{ ((enrolledIds$ | async) || []).includes(course.id) ? 'Unenroll' : 'Enroll' }}
+    </button>
+    <button class="btn btn-secondary" (click)="toggleDetails()">
+      {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+    </button>
+  </div>
+</div>

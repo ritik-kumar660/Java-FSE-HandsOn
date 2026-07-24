@@ -1,0 +1,19 @@
+.notification-box {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+
+.notification-box h4 {
+  color: #60a5fa;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.notification-box ul {
+  list-style: none;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}

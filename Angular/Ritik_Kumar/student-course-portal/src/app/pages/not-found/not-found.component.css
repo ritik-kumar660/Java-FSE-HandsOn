@@ -1,0 +1,24 @@
+.not-found-container {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-found-container h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.not-found-container p {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}

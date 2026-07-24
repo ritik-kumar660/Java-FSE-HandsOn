@@ -1,0 +1,30 @@
+<div class="profile-container">
+  <div class="profile-card">
+    <div class="avatar-circle">RK</div>
+    <div class="profile-info">
+      <h2>{{ student.name }}</h2>
+      <p class="id-tag">ID: {{ student.studentId }}</p>
+      <p class="meta"><strong>Email:</strong> {{ student.email }}</p>
+      <p class="meta"><strong>Major:</strong> {{ student.major }}</p>
+    </div>
+  </div>
+
+  <div class="enrolled-section">
+    <ng-container *ngIf="(enrolledCourses$ | async) as courses">
+      <h3>Enrolled Courses ({{ courses.length }})</h3>
+      <div *ngIf="courses.length > 0; else noEnrolled" class="enrolled-list">
+        <div *ngFor="let course of courses" class="enrolled-item">
+          <span class="item-code">{{ course.code }}</span>
+          <span class="item-name">{{ course.name }}</span>
+          <span class="badge badge-passed">{{ course.credits }} Credits</span>
+        </div>
+      </div>
+      <ng-template #noEnrolled>
+        <p class="empty-msg">No courses currently enrolled. Head to the Courses section to enroll.</p>
+      </ng-template>
+    </ng-container>
+
+    <!-- Task 67: Render NotificationComponent demonstrating component-scoped provider -->
+    <app-notification></app-notification>
+  </div>
+</div>
